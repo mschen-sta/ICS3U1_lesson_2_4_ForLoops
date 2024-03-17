@@ -59,8 +59,13 @@ for (int counter = 0; counter < Num; counter++);
 for (int counter = 0; counter < num; counter++) {
 }
 
-// Condition will never be true
+// Condition will never be true. This loop will never run
 for (int counter = 0; counter > 10; counter++) {
+    System.out.println(counter);
+}
+
+// Condition will always be true, hence, the loop never ends
+for (int counter = 0; counter >= 0; counter++) {
     System.out.println(counter);
 }
 ```
@@ -132,6 +137,6 @@ public class SummingValues extends ConsoleProgram {
         }
 
         System.out.println( "\nThe total sum is: " + dblTotal );
-        
+
     }
 }
