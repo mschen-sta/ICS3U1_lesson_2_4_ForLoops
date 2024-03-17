@@ -6,14 +6,15 @@ Until now, if we wanted to repeat code, we would have to copy and paste it.
 A simple example:
 
 
-```
-    public class SimpleRepetition extends ConsoleProgram {
-       public void run() {
-           System.out.println( "Another joke?" );
-           System.out.println( "Another joke?" );
-           System.out.println( "Another joke?" );
-       }
+```java
+public class SimpleRepetition extends ConsoleProgram {
+
+    public void run() {
+        System.out.println("Another joke?");
+        System.out.println("Another joke?");
+        System.out.println("Another joke?");
     }
+}
 ```
 
 
@@ -21,15 +22,16 @@ A simple example:
 ## The For Loop
 
 
-```
-    public class ForLoopDemo extends ConsoleProgram {
+```java
+public class ForLoopDemo extends ConsoleProgram {
 
-       public void run() {
-           for( int counter = 0; counter < 3; counter++ ){
-               System.out.println("Another joke?");
-           }
-       }
+    public void run() {
+        for (int counter = 0; counter < 3; counter++) {
+            System.out.println(counter);
+            System.out.println("Another joke?");
+        }
     }
+}
 ```
 
 
@@ -37,10 +39,10 @@ A simple example:
 ### For Loop Structure
 
 
-```
-    for( <initialize count; <continue condition>; <update count> ){
-       //indented statements…
-    }
+```java
+for (<initialize count>; <continue condition>; <update count>) {
+    // Indented statements
+}
 ```
 
 
@@ -48,14 +50,18 @@ A simple example:
 #### Common For loop Structure Errors
 
 
-```
-// incorrect opening
-for( int counter = 0; counter < REPEAT; counter++ );
-    		System.out.println( "Hello World!" );
-    }
+```java
+// Incorrect opening (missing {})
+for (int counter = 0; counter < Num; counter++);
+    System.out.println( "Hello World!" );
 
-// empty loop
-for( int counter = 0; counter < REPEAT; counter++ ){
+// Empty loop
+for (int counter = 0; counter < num; counter++) {
+}
+
+// Condition will never be true
+for (int counter = 0; counter > 10; counter++) {
+    System.out.println(counter);
 }
 ```
 
@@ -64,17 +70,16 @@ for( int counter = 0; counter < REPEAT; counter++ ){
 ### Example 1 - Counting Up
 
 
-```
+```java
 /**
 * A program that counts up from 0 to 10
 * @author: E. Fabroa
-*
 */
 
 public class CountUp10 extends ConsoleProgram {
 
    public void run() {
-       for (int counter = 0; counter <= 10; counter++  )  {
+       for (int counter = 0; counter <= 10; counter++) {
            System.out.println(counter);
        }
    }
@@ -84,18 +89,16 @@ public class CountUp10 extends ConsoleProgram {
 
 
 ###  Example 2 - Counting Down
-```
+```java
 /**
 * A program that counts down from 10 to 0
 * @author: E. Fabroa
-*
 */
-
 
 public class CountDown10 extends ConsoleProgram {
 
    public void run() {
-       for (int counter = 10;  counter >= 0; counter-- ) {
+       for (int counter = 10;  counter >= 0; counter--) {
 
            System.out.println(counter);
        }
@@ -105,28 +108,30 @@ public class CountDown10 extends ConsoleProgram {
 
 
 
-###  Example 3 - Summing Values
+###  Example 3 - Summing intValues
 
 
-```
-    /**
-    * A program that sums up values entered by the user
-    * @author: E. Fabroa
-    *
-    */
-    public class SummingValues extends ConsoleProgram {
+```java
+/**
+* A program that sums up intValues entered by the user
+* @author: E. Fabroa
+*/
 
-       public void run() {
+public class SummingValues extends ConsoleProgram {
 
-           int values = readInt(("How many values do you have?"));
-           double total = 0; //start at zero
-           double add;
+    public void run() {
 
-           for( int count = 0; count < values; count++ ) {
-               System.out.println("Sum so far is: " + total + "\n");
-               add = readDouble("Enter the next value: ");
-               total += add;  //add to total?
-           }
-           System.out.println( "The total sum is: " + total );
-       }
+        int intValues = readInt("How many values do you have? ");
+        double dblTotal = 0; // start at zero
+        double dblAdd;
+
+        for (int count = 0; count < intValues; count++) {
+            System.out.println("Sum so far is: " + dblTotal + "\n");
+            dblAdd = readDouble("Enter the next value: ");
+            dblTotal = dblTotal + dblAdd;  // add to total
+        }
+
+        System.out.println( "\nThe total sum is: " + dblTotal );
+        
     }
+}
