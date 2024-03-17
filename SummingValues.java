@@ -1,22 +1,24 @@
 /**
-* A program that sums up values entered by the user
-* @author: E. Fabroa
-*
+* User specifies the total amount of values to sum.
+* A for loop is used to sum all the values entered by the user.
+* @author: C. Chen
 */
+
 public class SummingValues extends ConsoleProgram {
 
     public void run() {
 
-        int values = readInt(("How many values do you have?"));
-        double total = 0; //start at zero
-        double add;
+        int intValues = readInt("How many values do you have? ");
+        double dblTotal = 0; // start at zero
+        double dblAdd;
 
-        for( int count = 0; count < values; count++ ) {
-            System.out.println("Sum so far is: " + total + "\n");
-            add = readDouble("Enter the next value: ");
-            //total += add;  //add to total
-            total = total + add;
+        for (int count = 0; count < intValues; count++) {
+            System.out.println("Sum so far is: " + dblTotal + "\n");
+            dblAdd = readDouble("Enter the next value: ");
+            dblTotal = dblTotal + dblAdd;  // add to total
         }
-        System.out.println( "The total sum is: " + total );
+
+        System.out.println( "\nThe total sum is: " + dblTotal );
+
     }
 }
