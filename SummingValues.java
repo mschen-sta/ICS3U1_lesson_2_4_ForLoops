@@ -18,7 +18,7 @@ public class SummingValues extends ConsoleProgram {
             dblTotal = dblTotal + dblAdd;  // add to total
         }
 
-        System.out.println( "\nThe total sum is: " + dblTotal );
+        System.out.println("\nThe total sum is: " + dblTotal);
 
     }
 }
